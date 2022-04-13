@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Component
-@Service("UserImpService")
+
+@Service
 public class UserImpService implements UserService{
 
     @Autowired
@@ -33,11 +33,11 @@ public class UserImpService implements UserService{
     }
 
     @Override
-    public Map<String, Object> getUserByPwd(int id, String pwd) {
+    public Map<String, Object> getUserByPwd(int user_id, String pwd) {
         Map<String, Object> map = new TreeMap<>();
         User user;
         try{
-            user = userDao.getUserByPwd(id, pwd);
+            user = userDao.getUserByPwd(user_id, pwd);
             if (user != null){
                 map.put("state", 1);
                 map.put("user", user);
@@ -74,11 +74,11 @@ public class UserImpService implements UserService{
     }
 
     @Override
-    public Map<String, Object> getUserById(int id) {
+    public Map<String, Object> getUserById(int user_id) {
         Map<String, Object> map = new TreeMap<>();
         String name;
         try{
-            name = userDao.getUserById(id);
+            name = userDao.getUserById(user_id);
             if (name != null){
                 map.put("state", 1);
                 map.put("name", name);

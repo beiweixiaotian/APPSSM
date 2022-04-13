@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Component
-@Service("CommentImpService")
+@Service
 public class CommentImpService implements CommentService{
     @Autowired
     CommentDao commentDao;

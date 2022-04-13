@@ -13,8 +13,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-@Component
-@Service("Question_Choice_MutImpService")
+
+@Service
 public class Question_Choice_MutImpService implements Question_Choice_MutService{
     @Autowired
     private Question_Choice_MutDao question_choice_mutDao;

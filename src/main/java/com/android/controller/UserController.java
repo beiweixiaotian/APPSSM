@@ -9,30 +9,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/android")
 public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/addUser")
+    @RequestMapping("/android/addUser")
     public Map<String, Object> addUser(User user) {
         return userService.addUser(user);
     }
 
-    @RequestMapping("/getUserByPwd")
-    public Map<String, Object> getUserByPwd(int id, String pwd) {
-        return userService.getUserByPwd(id, pwd);
+    @RequestMapping("/android/getUserByPwd")
+    public Map<String, Object> getUserByPwd(int user_id, String pwd) {
+        return userService.getUserByPwd(user_id, pwd);
     }
 
-    @RequestMapping("/getUserById")
-    public Map<String, Object> getUserById(int id){
-        return userService.getUserById(id);
+    @RequestMapping("/android/getUserById")
+    public Map<String, Object> getUserById(int user_id){
+        return userService.getUserById(user_id);
     }
 
-    @RequestMapping("/getAllUsers")
-    public Map<String, Object> getAllUsers(){return userService.getAllUsers();};
+    @RequestMapping("/android/getAllUsers")
+    public Map<String, Object> getAllUsers(){
+        return userService.getAllUsers();
+    }
 
-    @RequestMapping("/deleteUser")
-    public Map<String, Object> deleteUser(int user_id){return userService.deleteUser(user_id);};
+    @RequestMapping("/android/deleteUser")
+    public Map<String, Object> deleteUser(int user_id){
+        return userService.deleteUser(user_id);
+    }
 
 }

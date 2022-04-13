@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/android")
 public class EssayController {
     @Autowired
     EssayService essayService;
-    @RequestMapping("/getAllEssay")
+    @RequestMapping("/android/getAllEssay")
     public Map<String, Object> getAllEssay(){
         return essayService.getAllEssay();
     }
-    @RequestMapping("/getAllEssay")
+    @RequestMapping("/android/getEssayById")
     public Map<String, Object> getEssayById(int id){
         return essayService.getEssayById(id);
     }
-    @RequestMapping("/getAllEssay")
+    @RequestMapping("/android/addEssay")
     public Map<String, Object> addEssay(Essay essay){
         return essayService.addEssay(essay);
     }
-    @RequestMapping("/getAllEssay")
+    @RequestMapping("/android/deleteEssay")
     public Map<String, Object> deleteEssay(int id){
         return essayService.deleteEssay(id);
     }

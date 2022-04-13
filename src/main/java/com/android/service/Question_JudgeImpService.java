@@ -13,8 +13,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-@Component
-@Service("Question_JudgeImpService")
+
+@Service
 public class Question_JudgeImpService implements Question_JudgeService{
     @Autowired
     private Question_JudgeDao question_judgeDao;

@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-@Component
-@Service("Question_ChoiceImpService")
+
+@Service
 public class Question_ChoiceImpService implements Question_ChoiceService{
     @Autowired
     private Question_ChoiceDao question_choiceDao;

@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/android")
 public class PaperController {
     @Autowired
     PaperService paperService;
-    @RequestMapping("getAllPaper")
+    @RequestMapping("/android/getAllPaper")
     public Map<String, Object> getAllPaper(){
         return paperService.getAllPaper();
     }
-    @RequestMapping("getPaperById")
+    @RequestMapping("/android/getPaperById")
     public Map<String, Object> getPaperById(int id){
         return paperService.getPaperById(id);
     }
-    @RequestMapping("addPaper")
+    @RequestMapping("/android/addPaper")
     public Map<String, Object> addPaper(Paper paper){
         return paperService.addPaper(paper);
     }
-    @RequestMapping("deletePaper")
+    @RequestMapping("/android/deletePaper")
     public Map<String, Object> deletePaper(int id){
         return paperService.deletePaper(id);
     }

@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Component
-@Service("PaperImpService")
+
+@Service
 public class PaperImpService implements PaperService{
     @Autowired
     private PaperDao paperDao;

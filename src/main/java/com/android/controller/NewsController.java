@@ -9,22 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/android")
 public class NewsController {
     @Autowired
     NewsService newsService;
-    @RequestMapping("/getAllNews")
+    @RequestMapping("/android/getAllNews")
     public Map<String, Object> getAllNews(int msg_to){return newsService.getAllNews(msg_to);}
 
-    @RequestMapping("/getNewsById")
+    @RequestMapping("/android/getNewsById")
     public Map<String, Object> getNewsById(int id){return newsService.getNewsById(id);}
 
-    @RequestMapping("/addNews")
+    @RequestMapping("/android/addNews")
     public Map<String, Object> addNews(News news){
         return newsService.addNews(news);
     }
 
-    @RequestMapping("/deleteNews")
+    @RequestMapping("/android/deleteNews")
     public Map<String, Object> deleteNews(int id){
         return newsService.deleteNews(id);
     }

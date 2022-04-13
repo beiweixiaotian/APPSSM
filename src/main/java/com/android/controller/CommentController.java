@@ -9,24 +9,23 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/android")
 public class CommentController {
 
     @Autowired
     CommentService commentService;
-    @RequestMapping("/getAllComment")
+    @RequestMapping("/android/getAllComment")
     public Map<String, Object> getAllComment(int essay_id){
         return commentService.getAllComment(essay_id);
     }
-    @RequestMapping("/getCommentById")
+    @RequestMapping("/android/getCommentById")
     public Map<String, Object> getCommentById(int id){
         return commentService.getCommentById(id);
     }
-    @RequestMapping("/addComment")
+    @RequestMapping("/android/addComment")
     public Map<String, Object> addComment(Comment comment){
         return commentService.addComment(comment);
     }
-    @RequestMapping("/deleteComment")
+    @RequestMapping("/android/deleteComment")
     public Map<String, Object> deleteComment(int id){
         return commentService.deleteComment(id);
     }

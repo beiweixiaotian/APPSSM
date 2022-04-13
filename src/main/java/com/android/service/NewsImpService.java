@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Component
-@Service("NewsImpService")
+
+@Service
 public class NewsImpService implements NewsService{
 
     @Autowired

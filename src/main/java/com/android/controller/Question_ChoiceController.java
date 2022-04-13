@@ -10,24 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/android")
 public class Question_ChoiceController {
-    @Qualifier("question_ChoiceService")
     @Autowired
     Question_ChoiceService question_choiceService;
-    @RequestMapping("/getAllQuestion_Choice")
+    @RequestMapping("/android/getAllQuestion_Choice")
     public Map<String, Object> getAllQuestion_Choice(){
         return question_choiceService.getAllQuestion_Choice();
     }
-    @RequestMapping("/getQuestionChoiceById")
+    @RequestMapping("/android/getQuestionChoiceById")
     public Map<String, Object> getQuestionChoiceById(int id){
         return question_choiceService.getQuestionChoiceById(id);
     }
-    @RequestMapping("/addQuestionChoice")
+    @RequestMapping("/android/addQuestionChoice")
     public Map<String, Object> addQuestionChoice(Question_Choice question_choice){
         return question_choiceService.addQuestionChoice(question_choice);
     }
-    @RequestMapping("/deleteQuestionChoice")
+    @RequestMapping("/android/deleteQuestionChoice")
     public Map<String, Object> deleteQuestionChoice(int id){
         return question_choiceService.deleteQuestionChoice(id);
     }

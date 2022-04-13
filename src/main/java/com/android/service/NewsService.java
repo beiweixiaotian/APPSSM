@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-@Component
+
 @Service
 public interface NewsService {
     public Map<String, Object> getAllNews(int msg_to);
