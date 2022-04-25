@@ -2,7 +2,7 @@ package com.android.entity;
 
 //试题类
 public class Paper {
-    private int user_id;//答题人编号
+    private String user_id;//答题人编号
     private int paper_id;//试题编号
     private String paper_content;//试题内容
     private int paper_score;//试题分数
@@ -16,11 +16,11 @@ public class Paper {
         this.paper_id = paper_id;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

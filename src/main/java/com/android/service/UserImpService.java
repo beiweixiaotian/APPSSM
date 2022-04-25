@@ -28,27 +28,33 @@ public class UserImpService implements UserService{
         }
         catch (Exception e) {
             map.put("state",0);
+            map.put("msg", "学号已注册");
         }
         return map;
     }
 
     @Override
-    public Map<String, Object> getUserByPwd(int user_id, String pwd) {
+    public Map<String, Object> getUserByPwd(String user_id, String pwd) {
         Map<String, Object> map = new TreeMap<>();
         User user;
         try{
-            user = userDao.getUserByPwd(user_id, pwd);
-            if (user != null){
+            user = userDao.getUserById(user_id);
+            if (user != null && user.getUser_pwd().equals(pwd)){
                 map.put("state", 1);
                 map.put("user", user);
             }
-            else {
+            else if (user == null){
                 map.put("state", 0);
-                map.put("msg", "用户名或密码错误");
+                map.put("msg", "用户不存在");
+            }
+            else if (!user.getUser_pwd().equals(pwd)){
+                map.put("state", 0);
+                map.put("msg", "密码错误");
             }
         }
         catch (Exception e){
             e.printStackTrace();
+            map.put("test", "异常");
         }
         return map;
     }
@@ -74,17 +80,18 @@ public class UserImpService implements UserService{
     }
 
     @Override
-    public Map<String, Object> getUserById(int user_id) {
+    public Map<String, Object> getUserById(String user_id) {
         Map<String, Object> map = new TreeMap<>();
-        String name;
+        User user;
         try{
-            name = userDao.getUserById(user_id);
-            if (name != null){
+            user = userDao.getUserById(user_id);
+            if (user != null){
                 map.put("state", 1);
-                map.put("name", name);
+                map.put("name", user.getUser_name());
             }
             else {
-
+                map.put("state", 0);
+                map.put("msg", "无此用户");
             }
         }
         catch (Exception e){
@@ -94,10 +101,10 @@ public class UserImpService implements UserService{
     }
 
     @Override
-    public Map<String, Object> deleteUser(int id) {
+    public Map<String, Object> deleteUser(String user_id) {
         Map<String, Object> map = new TreeMap<>();
         try{
-            map.put("state", userDao.deleteUser(id));
+            map.put("state", userDao.deleteUser(user_id));
         }
         catch (Exception e){
             map.put("state", 0);

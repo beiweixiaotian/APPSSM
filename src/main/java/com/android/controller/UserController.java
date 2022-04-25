@@ -18,13 +18,13 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @RequestMapping("/android/getUserByPwd")
-    public Map<String, Object> getUserByPwd(int user_id, String pwd) {
-        return userService.getUserByPwd(user_id, pwd);
-    }
+//    @RequestMapping("/android/getUserByPwd")
+//    public Map<String, Object> getUserByPwd(int user_id, String pwd) {
+//        return userService.getUserByPwd(user_id, pwd);
+//    }
 
     @RequestMapping("/android/getUserById")
-    public Map<String, Object> getUserById(int user_id){
+    public Map<String, Object> getUserById(String user_id){
         return userService.getUserById(user_id);
     }
 
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @RequestMapping("/android/deleteUser")
-    public Map<String, Object> deleteUser(int user_id){
+    public Map<String, Object> deleteUser(String user_id){
         return userService.deleteUser(user_id);
     }
 

@@ -11,14 +11,14 @@ import java.util.List;
 @Component
 public interface NewsDao{
     @Select("select * from news where msg_to = #{msg_to}")
-    List<News> getAllNews(int msg_to);
+    List<News> getAllNews(String msg_to);
 
     @Select("select * from news where msg_to = #{msg_to}")
-    News getNewsById(int id);
+    News getNewsById(String id);
 
     @Insert("insert news (msg_from, msg_to, msg_content) values (#{msg_from}, #{msg_to}, #{msg_content})")
     int addNews(News news);
 
     @Delete("delete from news where news_id = #{new_id}")
-    int deleteNews(int id);
+    int deleteNews(String id);
 }

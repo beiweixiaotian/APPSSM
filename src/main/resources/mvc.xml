@@ -44,4 +44,10 @@
     <!-- 4.扫描web相关的bean -->
     <context:component-scan base-package="com.android.controller" />
     <aop:aspectj-autoproxy />
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.android.utils.JWTUtils"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

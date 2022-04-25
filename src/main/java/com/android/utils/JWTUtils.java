@@ -17,7 +17,7 @@ public class JWTUtils {
     /**
      * 公钥
      */
-    private static final String SECRET = "twl";  //此处随便设置一个自己的加密符号
+    private static final String SECRET = "f26e587c28064d0e855e72c0a6a0e618";  //此处随便设置一个自己的加密符号
     public static String createToken(int id, String username,
                                      String type) throws Exception {
         // 签发时间

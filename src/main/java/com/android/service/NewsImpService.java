@@ -18,7 +18,7 @@ public class NewsImpService implements NewsService{
     @Autowired
     private NewsDao newsDao;
     @Override
-    public Map<String, Object> getAllNews(int msg_to) {
+    public Map<String, Object> getAllNews(String msg_to) {
         Map<String, Object> map = new TreeMap<>();
         List<News> news;
         try{
@@ -38,7 +38,7 @@ public class NewsImpService implements NewsService{
     }
 
     @Override
-    public Map<String, Object> getNewsById(int id) {
+    public Map<String, Object> getNewsById(String id) {
         Map<String, Object> map = new TreeMap<>();
         News news;
         try{
@@ -70,7 +70,7 @@ public class NewsImpService implements NewsService{
     }
 
     @Override
-    public Map<String, Object> deleteNews(int id) {
+    public Map<String, Object> deleteNews(String id) {
         Map<String, Object> map = new TreeMap<>();
         try {
             map.put("state", newsDao.deleteNews(id));

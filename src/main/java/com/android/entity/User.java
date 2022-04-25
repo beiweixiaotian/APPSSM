@@ -5,7 +5,7 @@ import java.io.Serializable;
 //用户类
 public class User implements Serializable {
 
-    private int user_id;//用户编号
+    private String user_id;//用户编号
     private String user_name;//昵称
     private String user_pwd;//密码
 
@@ -13,21 +13,22 @@ public class User implements Serializable {
 
     }
 
-    public User(int user_id, String user_pwd) {
+    public User(String user_id, String user_pwd) {
         this.user_id = user_id;
         this.user_pwd = user_pwd;
     }
 
-    public User(String user_name, String user_pwd) {
-        this.user_pwd = user_pwd;
+    public User(String user_id, String user_name, String user_pwd) {
+        this.user_id = user_id;
         this.user_name = user_name;
+        this.user_pwd = user_pwd;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

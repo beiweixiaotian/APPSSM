@@ -13,10 +13,10 @@ public class NewsController {
     @Autowired
     NewsService newsService;
     @RequestMapping("/android/getAllNews")
-    public Map<String, Object> getAllNews(int msg_to){return newsService.getAllNews(msg_to);}
+    public Map<String, Object> getAllNews(String msg_to){return newsService.getAllNews(msg_to);}
 
     @RequestMapping("/android/getNewsById")
-    public Map<String, Object> getNewsById(int id){return newsService.getNewsById(id);}
+    public Map<String, Object> getNewsById(String id){return newsService.getNewsById(id);}
 
     @RequestMapping("/android/addNews")
     public Map<String, Object> addNews(News news){
@@ -24,7 +24,7 @@ public class NewsController {
     }
 
     @RequestMapping("/android/deleteNews")
-    public Map<String, Object> deleteNews(int id){
+    public Map<String, Object> deleteNews(String id){
         return newsService.deleteNews(id);
     }
 }

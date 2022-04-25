@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service
 public interface Question_JudgeService {
 
     public Map<String, Object> getAllQuestion_Judge();

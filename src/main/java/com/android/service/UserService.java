@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service
+
 public interface UserService {
     public Map<String, Object> addUser(User user);
     public Map<String, Object> getAllUsers();
-    public Map<String, Object> getUserById(int user_id);
-    public Map<String, Object> getUserByPwd(int user_id, String pwd);
-    public Map<String, Object> deleteUser(int user_id);
+    public Map<String, Object> getUserById(String user_id);
+    public Map<String, Object> getUserByPwd(String user_id, String pwd);
+    public Map<String, Object> deleteUser(String user_id);
 }

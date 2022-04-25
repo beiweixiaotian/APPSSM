@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 //文章类
 public class Essay implements Serializable {
     private int essay_id;//文章编号
-    private int user_id;//文章所属账号
+    private String user_id;//文章所属账号
     private String user_name;//文章所属账号昵称
     private String essay_title;//文章标题
     private String essay_content;//文章内容
@@ -17,7 +17,7 @@ public class Essay implements Serializable {
 
     }
 
-    public Essay(int user_id, String essay_title, String essay_content, String user_name) {
+    public Essay(String user_id, String essay_title, String essay_content, String user_name) {
         this.user_id = user_id;
         this.essay_title = essay_title;
         this.essay_content = essay_content;
@@ -43,11 +43,11 @@ public class Essay implements Serializable {
         this.essay_id = essay_id;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

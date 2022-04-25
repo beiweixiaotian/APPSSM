@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 //评论类
 public class Comment {
     private int comment_id;//评论编号
-    private int user_id;//评论所属账号
+    private String user_id;//评论所属账号
     private int essay_id;//评论所属文章
     private String user_name;//评论账号昵称
     private String comment_content;//评论内容
@@ -14,7 +14,7 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(int user_id, int essay_id, String comment_content, String user_name) {
+    public Comment(String user_id, int essay_id, String comment_content, String user_name) {
         this.user_id = user_id;
         this.essay_id = essay_id;
         this.comment_content = comment_content;
@@ -39,11 +39,11 @@ public class Comment {
         this.comment_id = comment_id;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

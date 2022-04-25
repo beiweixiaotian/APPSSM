@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service
+
 public interface PaperService {
     public Map<String, Object> getAllPaper();
 

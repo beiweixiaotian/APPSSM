@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-@Service
 public interface Question_Choice_MutService {
 
     public Map<String, Object> getAllQuestion_Choice_Mut();

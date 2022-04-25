@@ -11,19 +11,19 @@ import java.util.List;
 @Component
 public interface UserDao{
 
-    @Insert("insert into users (user_name, user_pwd) values(#{user_name}, #{user_pwd})")
+    @Insert("insert into users (user_id, user_name, user_pwd) values(#{user_id}, #{user_name}, #{user_pwd})")
     int addUser(User user);
 
     @Select("select * from users")
     List<User> getAllUsers();
 
-    @Select("select user_name from users where user_id = #{user_id}")
-    String getUserById(int user_id);
+    @Select("select * from users where user_id = #{user_id}")
+    User getUserById(String user_id);
 
-    @Select("select * from users where user_id = #{user_id} and user_pwd = #{user_pwd}")
-    User getUserByPwd(int user_id, String user_pwd);
+//    @Select("select * from users where user_id = #{user_id} and user_pwd = #{user_pwd}")
+//    User getUserByPwd(int user_id, String user_pwd);
 
     @Delete("delete from users where user_id = #{user_id}")
-    int deleteUser(int user_id);
+    int deleteUser(String user_id);
 
 }
