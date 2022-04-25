@@ -20,4 +20,6 @@ public interface Question_JudgeService {
     public Map<String, Object> addQuestionJudge(Question_Judge question_judge);
 
     public Map<String, Object> deleteQuestionJudge(int id);
+
+    public Map<String, Object> getQuestion_JudgeRad();
 }

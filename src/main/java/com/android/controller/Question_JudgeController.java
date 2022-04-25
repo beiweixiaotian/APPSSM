@@ -32,4 +32,10 @@ public class Question_JudgeController {
     public Map<String, Object> deleteQuestionJudge(int id){
         return question_judgeService.deleteQuestionJudge(id);
     }
+    @RequestMapping("/android/getQuestion_JudgeRad")
+    public Map<String, Object> getQuestion_JudgeRad(){
+        return question_judgeService.getQuestion_JudgeRad();
+    }
+
+
 }

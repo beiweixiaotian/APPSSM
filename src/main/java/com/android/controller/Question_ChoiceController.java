@@ -29,4 +29,9 @@ public class Question_ChoiceController {
     public Map<String, Object> deleteQuestionChoice(int id){
         return question_choiceService.deleteQuestionChoice(id);
     }
+    @RequestMapping("/android/getQuestion_ChoiceRad")
+    public Map<String, Object> getQuestion_ChoiceRad(){
+        return question_choiceService.getQuestion_ChoiceRad();
+    }
+
 }

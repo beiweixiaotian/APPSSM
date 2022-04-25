@@ -31,4 +31,8 @@ public class Question_ChoiceMutController {
     public Map<String, Object> deleteQuestionChoiceMut(int id){
         return question_choice_mutService.deleteQuestionChoiceMut(id);
     }
+    @RequestMapping("/android/getQuestion_ChoiceMutRad")
+    public Map<String, Object> getQuestion_ChoiceMutRad(){
+        return question_choice_mutService.getQuestion_ChoiceMutRad();
+    }
 }

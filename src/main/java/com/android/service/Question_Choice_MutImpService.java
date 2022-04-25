@@ -81,4 +81,24 @@ public class Question_Choice_MutImpService implements Question_Choice_MutService
         }
         return map;
     }
+
+    @Override
+    public Map<String, Object> getQuestion_ChoiceMutRad() {
+        Map<String, Object> map = new TreeMap<>();
+        List<Question_Choice_Mut> question_choice_muts;
+        try{
+            question_choice_muts = question_choice_mutDao.getQuestion_ChoiceMutRad();
+            if (question_choice_muts != null){
+                map.put("state", 1);
+                map.put("question_choice_muts", question_choice_muts);
+            }
+            else {
+                map.put("state", 0);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

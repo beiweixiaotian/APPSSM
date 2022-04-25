@@ -81,4 +81,24 @@ public class Question_JudgeImpService implements Question_JudgeService{
         }
         return map;
     }
+
+    @Override
+    public Map<String, Object> getQuestion_JudgeRad() {
+        Map<String, Object> map = new TreeMap<>();
+        List<Question_Judge> question_judges;
+        try{
+            question_judges = question_judgeDao.getQuestion_JudgeRad();
+            if (question_judges != null){
+                map.put("state", 1);
+                map.put("question_judges", question_judges);
+            }
+            else {
+                map.put("state", 0);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

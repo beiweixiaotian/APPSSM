@@ -20,4 +20,6 @@ public interface Question_ChoiceService {
     public Map<String, Object> addQuestionChoice(Question_Choice question_choice);
 
     public Map<String, Object> deleteQuestionChoice(int id);
+
+    public Map<String, Object> getQuestion_ChoiceRad();
 }

@@ -13,7 +13,7 @@ public interface NewsDao{
     @Select("select * from news where msg_to = #{msg_to}")
     List<News> getAllNews(String msg_to);
 
-    @Select("select * from news where msg_to = #{msg_to}")
+    @Select("select * from news where msg_id = #{msg_id}")
     News getNewsById(String id);
 
     @Insert("insert news (msg_from, msg_to, msg_content) values (#{msg_from}, #{msg_to}, #{msg_content})")

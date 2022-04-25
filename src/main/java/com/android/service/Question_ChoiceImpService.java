@@ -80,4 +80,24 @@ public class Question_ChoiceImpService implements Question_ChoiceService{
         }
         return map;
     }
+
+    @Override
+    public Map<String, Object> getQuestion_ChoiceRad() {
+        Map<String, Object> map = new TreeMap<>();
+        List<Question_Choice> question_choices;
+        try{
+            question_choices = question_choiceDao.getQuestion_ChoiceRad();
+            if (question_choices != null){
+                map.put("state", 1);
+                map.put("question_choices", question_choices);
+            }
+            else {
+                map.put("state", 0);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

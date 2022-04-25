@@ -19,4 +19,6 @@ public interface Question_Choice_MutService {
     public Map<String, Object> addQuestionChoiceMut(Question_Choice_Mut question_choice_mut);
 
     public Map<String, Object> deleteQuestionChoiceMut(int id);
+
+    public Map<String, Object> getQuestion_ChoiceMutRad();
 }
