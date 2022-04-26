@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-
-
 @Service
 public class Question_JudgeImpService implements Question_JudgeService{
     @Autowired
